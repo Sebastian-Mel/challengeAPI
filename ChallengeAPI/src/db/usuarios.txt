@@ -1,0 +1,28 @@
+{
+  "usuarios": [
+    {
+      "email": "usuario1@mail.com",
+      "password": "$2b$10$mhTqzEovSeNvs3QIDYgHjei5afPlW7kiBfjKg8W7ihqkAmraTYLX."
+    },
+    {
+      "email": "usuario2@mail.com",
+      "password": "$2b$10$h6PIXoVsWhcc5E4CbbvMbOcaxRYhtl6Hsk82pmWa1mM8YNszfW4rG"
+    },
+    {
+      "email": "usuario3@mail.com",
+      "password": "$2b$10$jgGsoc.iYKdg2Sp3Sl7GeeA1VmZnk6EEwukY/CheTTzgQ3AWUBMie"
+    },
+    {
+      "email": "usuario4@mail.com",
+      "password": "$2b$10$b8ZCzyacEe5U.vL/7CI5e.cqtH4iDCPcDoDIzVtg7Qf7TqsKku4V2"
+    },
+    {
+      "email": "usuario5@mail.com",
+      "password": "$2b$10$4NJvAOmBpczm8ayLpxQDHu0t4vpZot/GMtueWouRXS.tvYszl75cS"
+    },
+    {
+      "email": "usuario6@mail.com",
+      "password": "$2b$10$54zqKm07dOGZvYu4zc1BDekjfVWRj1Vqu/0d1Ev3yfEBP6Xqd8qRe"
+    }
+  ]
+}

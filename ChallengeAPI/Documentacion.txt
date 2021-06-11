@@ -1,0 +1,51 @@
+Challenge API: la api se desarrolló basado en el patron de controladores, 
+no consideré necesario la implementacion de modelos.
+Tambien se incluyeron los enrutadores respectivos a sus controllers.
+Dada la naturaleza del proyecto no consideré necesario la implementación de un ID para, 
+siendo consciente de que en una base de datos muchas consultas se hacen a partir de este campo.
+En este caso sabiendo que el email sería único la API se desarrolló al rededor de esa premisa.
+Cabe destacar que la API admite admite el manejo de multiples usuarios.
+Las claves secretas como el acces token, el api token serán consultadas al archivo .env.
+
+Recursos:
+http://localhost:3000/api/usuarios/registrar-->
+Metodo:POST
+camino feliz: se recibe el json y se crea el usuario (con clave encriptada) en el archivo usuarios.txt,
+asi como una tupla (email,favoritos) en el archivo de favoritos.
+caminos alternativos: error en los datos recibidos. La acción chequea
+                                                                     --> mail valido (con regular expressions)
+                                                                     -->password con mas de 6 caracteres
+                                                                     -->campos vacíos
+http://localhost:3000/api/usuarios/autenticar?email=xxx&password=xxx-->
+Metodo:POST
+camino feliz: se recibe por parametros y se chequea que las credenciales sean correctas, la accion devuelve un token.
+caminos alternativos: error en los datos recibidos. La acción chequea--> credenciales correctas
+                                                                     --> mail valido (con regular expressions)
+                                                                     -->password con mas de 6 caracteres
+                                                                     -->campos vacíos
+http://localhost:3000/api/usuarios/logout-->
+Metodo:POST
+camino feliz: se chequea que el token sea válido y el token se registra en invalidTokens.txt
+caminos alternativos: posibles errores de token--> token invalido
+                                               --> token expirado
+                                               --> token inexistente
+
+http://localhost:3000/api/usuarios/agregarFavoritos-->
+Metodo:POST
+camino feliz: se chequea que el token sea válido y la palicula se agrega al favoritos del usuario correspondiente
+caminos alternativos: posibles errores de token--> token invalido
+                                               --> token expirado
+                                               --> token inexistente
+http://localhost:3000/api/usuarios/misFavoritos-->
+Metodo:GET
+camino feliz: se chequea que el token sea válido y la palicula se agrega al favoritos del usuario correspondiente
+caminos alternativos: posibles errores de token--> token invalido
+                                               --> token expirado
+                                               --> token inexistente
+http://localhost:3000/api/movies/obtenerPeliculas?keyword=xxx-->
+Metodo:GET
+camino feliz: se chequea que el token sea válido y que las keywords sean válidas, se devuelve el listado de peliculas.
+caminos alternativos: posibles errores de token--> token invalido
+                                               --> token expirado
+                                               --> token inexistente
+                                               --> keyword invalida(La accion responde con el listado de keywords validas).
